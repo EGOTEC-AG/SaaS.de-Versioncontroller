@@ -37,7 +37,8 @@ void MainWindow::init() {
     // Settings
 #ifdef _WIN32
     MainWindow::appFileName = "Timerecording.exe";
-    MainWindow::filesURL = "http://files.saas.de/saasde/tray/windows/";
+    //MainWindow::filesURL = "http://files.saas.de/saasde/tray/windows/";
+    MainWindow::filesURL = "http://files.saas.de/tasksymbol_2021/windows/";
 #elif __APPLE__
     MainWindow::appFileName = "Timerecording.app";
     MainWindow::filesURL = "http://files.saas.de/saasde/tray/mac/";
@@ -49,7 +50,7 @@ void MainWindow::init() {
 
         downloadFile(versionURL, true);
     } else {
-        QMessageBox::StandardButton resBtn = QMessageBox::question(this, "SaaS.de Versioncontrol", "Error!\n\nContact the support!", QMessageBox::Ok | QMessageBox::Ok);
+        QMessageBox::StandardButton resBtn = QMessageBox::question(this, "SaaS.de Versioncontrol", "Timerecording.exe not found\n\nContact the support!", QMessageBox::Ok | QMessageBox::Ok);
         if (resBtn == QMessageBox::Ok) {
             qApp->closeAllWindows();
             qApp->quit();
